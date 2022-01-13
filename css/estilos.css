@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.header{
+    background-color: #D3E4CD; 
+    height: 12vh;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img{
+    height: 9vh;   
+}
+.header ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.header li{
+    margin: 10px 20px;
+    padding: 10px;  
+}
+.header ul li a {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:white;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    /* transition: 0.5s; */
+    position: relative;
+}
+
+
+/*SECCIONES*/
+
+/*Seccion principal*/
+.section-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #99A799;
+    height: 20vh;
+    justify-content: center;
+}
+.section-principal h1{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    max-width: 500px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+       
+}
+
+/*Seccion informativa*/
+.section-informativa{
+    background-color: #F2DDC1;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-informativa div{
+    display: flex;
+    margin: 20px;
+}
+
+.section-informativa p{
+    max-width: 500px;
+    min-width: 250px;
+    text-align: center;
+    margin: 10px;
+}
+
+.section-informativa h2{
+    margin: 20px;
+}
+
+/*Seccion Galeria*/
+
+.contenedorGaleria{
+    display: grid;
+    background-color: #F2DDC1;
+    grid-template-columns: repeat(4,1fr);    
+    grid-auto-rows: 150px;
+    padding: 20px;
+    grid-gap: 10px;
+}
+
+.itemGaleria{
+    position: relative;
+}
+
+.imgGaleria{
+    width: 100% ;
+    height: 100% ;
+    object-fit: cover;
+ }
+
+.itemGaleria:nth-child(4){
+    grid-column-start: span 2;
+ } 
+
+ .itemGaleria:nth-child(5){
+    grid-row-start: span 2;
+ }
+
+ .itemGaleria:nth-child(9){
+    grid-column-start: span 2;
+ }
+
+ .tituloItem{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background: linear-gradient(rgba(255,255,255,0),rgba(0,0,0,1));
+    width: 100%;
+    margin:0;
+    padding: 5px;
+}
+
+/*Footer*/
+.footer{
+    height: 10vh;
+    background-color: #E2C2B9;
+}
+.footer ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer li{
+    margin: 10px 15px;
+    padding: 10px;    
+}
+
+/*MEDIA QUERYS*/
+/*PASO 1: Estragia => Mobile LAST*/
+
+/*TAMAÑO MEDIANO: TABLET*/
+@media (max-width: 768px){
+    .header{
+        flex-direction: column;
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .section-informativa{
+        height: 130vh;
+        align-items: center;
+    }
+    .section-informativa div{
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-informativa p{
+        max-width: 400px;
+        text-align: center;
+    }
+    .section-informativa img{
+        max-height: 200px;
+    }
+
+    .itemGaleria:nth-child(1){
+        grid-column-start: span 2;
+     } 
+
+     .itemGaleria:nth-child(6){
+        grid-row-start: span 2;
+     }
+    
+     .itemGaleria:nth-child(10){
+        grid-column-start: span 2;
+     }   
+}
+
+/*TAMAÑO CHICO: CELULAR*/
+@media (max-width: 425px){
+    .header{
+        flex-wrap: wrap;
+        flex-direction: column;      
+        height: 20vh;
+    }    
+
+    .header ul{
+        display: block;
+        list-style: none;
+        align-items: center;
+        justify-content:flex-start;        
+    }
+
+    .header li{
+        margin: 5px 5px;
+        padding: 3px;  
+    }
+
+    .section-informativa img{
+        display: none;
+    }
+    .contenedorGaleria{
+        grid-template-columns: repeat(2,1fr);    
+    }   
+}
+
+@media (min-width: 800px){
+
+    .itemGaleria:nth-child(1){
+        grid-column-start: span 2;
+     } 
+
+     .itemGaleria:nth-child(6){
+        grid-row-start: span 2;
+     }
+    
+     .itemGaleria:nth-child(10){
+        grid-column-start: span 2;
+     }    
+  
+}
+
